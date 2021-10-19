@@ -12,13 +12,13 @@ After containerizing the services, I followed the rest of the tutorial at https:
 
 After ensuring the application worked using kubernetes, I then attempted to run the application on GKE by doing the following:
 1) I opened my Google Cloud Console and created a new project with ID "sa-project-329501" and enabled billing, the Container Registry API, and the GKE API.
-2) In the Cloud shell, I pulled the Docker images from my Docker hub using commands like "docker pull shay4545/sentiment-analysis-logic"
-3) After pulling the images for sa-logic and sa-web-app, I tagged them using commands like "docker tag shay4545/sentiment-analysis-logic gcr.io/sa-project-329501/sentiment-analysis-logic" in the Cloud shell
-4) After tagging the images for sa-logic and sa-web-app, I pushed them to my container registry using commands like "docker push gcr.io/sa-project-329501/sentiment-analysis-logic" in the Cloud shell
+2) In the Cloud shell, I pulled the Docker images from my Docker hub using commands such as "docker pull shay4545/sentiment-analysis-logic"
+3) After pulling the images for sa-logic and sa-web-app, I tagged them using commands such as "docker tag shay4545/sentiment-analysis-logic gcr.io/sa-project-329501/sentiment-analysis-logic" in the Cloud shell
+4) After tagging the images for sa-logic and sa-web-app, I pushed them to my container registry using commands such as "docker push gcr.io/sa-project-329501/sentiment-analysis-logic" in the Cloud shell
 
 Note that I did not yet add the image shay4545/sentiment-analysis-frontend to my container registry becuase the image will need to be rebuilt using the external IP of the deployed sa-web-app service in order to function correctly.
 
-5) After creating a new standard cluster in GKE and running "gcloud container clusters get-credentials sentiment-analysis-cluster", I created deployments called sa-logic and sa-web-app using the images from my container registry using commands like "kubectl create deployment sa-logic --image=gcr.io/sa-project-329501/sentiment-analysis-logic"
+5) After creating a new standard cluster in GKE and running "gcloud container clusters get-credentials sentiment-analysis-cluster", I created deployments called sa-logic and sa-web-app using the images from my container registry using commands such as "kubectl create deployment sa-logic --image=gcr.io/sa-project-329501/sentiment-analysis-logic"
 6) After creating the deployments, I examined the YAML file for sa-web-app and edited it to include: 
         env:
           - name: SA_LOGIC_API_URL
