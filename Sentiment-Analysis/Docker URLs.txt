@@ -1,0 +1,3 @@
+https://hub.docker.com/repository/docker/shay4545/sentiment-analysis-logic
+https://hub.docker.com/repository/docker/shay4545/sentiment-analysis-web-app
+https://hub.docker.com/repository/docker/shay4545/sentiment-analysis-frontend
