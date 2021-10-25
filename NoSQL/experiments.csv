@@ -1,0 +1,4 @@
+﻿Name,Id,Temp,Conductivity,Concentration,URL
+experiment 1,1,-1,52,3.4,exp1.csv
+experiment 2,2,-2,52.1,3.4,exp2.csv
+experiment 3,3,-2.93,57.1,3.7,exp3.csv
