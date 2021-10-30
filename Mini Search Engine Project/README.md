@@ -1,4 +1,5 @@
 # Mini Search Engine Project
+This project was developed for CS 1660 - Intro to Cloud Computing (Fall 2021) at the University of Pittsburgh
 
 ## **Prerequisites**
 
