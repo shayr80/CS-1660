@@ -4,7 +4,7 @@ This project was developed for CS 1660 - Intro to Cloud Computing (Fall 2021) at
 ## **Prerequisites**
 
 ### Install Docker:
-[Docker](https://www.docker.com/products/docker-desktop)<br/><br/>
+Windows & MacOS: [Docker](https://www.docker.com/products/docker-desktop)<br/><br/>
 
 ### Install X11 Framework:
 Windows: I used [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/), but [Xming](https://sourceforge.net/projects/xming/) should also work
