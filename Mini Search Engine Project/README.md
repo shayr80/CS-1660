@@ -1,25 +1,25 @@
-#####Getting Started
+##### Getting Started
 
-###**Prerequisites**
+### **Prerequisites**
 
-##Install Docker:
+## Install Docker:
 [Docker](https://www.docker.com/products/docker-desktop)
 
-##Install X11 Framework:
+## Install X11 Framework:
 Windows: I used [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/), but [Xming](https://sourceforge.net/projects/xming/) should also work
 MacOS: Install [XQuartz](https://www.xquartz.org/)
 
-###**Running the program**
+### **Running the program**
 
-##Launch your X Server
+## Launch your X Server
 Windows: Open XLaunch and start an xserver (default settings should be fine)
 MacOS: Open XQuartz and start an xserver
 
-##Pull Docker Image:
+## Pull Docker Image:
 Open a Command Prompt or Terminal and enter
 'docker pull shay4545/mini-search-engine'
 
-##Run Program:
+## Run Program:
 In your Command Prompt or Terminal, enter
 'docker run -e DISPLAY=<YOUR_IP>:0.0 shay4545/mini-search-engine'
 where <YOUR_IP> is the local IP address of your computer. 
