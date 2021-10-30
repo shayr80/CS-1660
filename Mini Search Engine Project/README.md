@@ -2,7 +2,7 @@
 
 ## **Prerequisites**
 
-#### Install Docker:
+### Install Docker:
 [Docker](https://www.docker.com/products/docker-desktop)
 
 #### Install X11 Framework:
