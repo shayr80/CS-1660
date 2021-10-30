@@ -22,7 +22,7 @@ MacOS: Open XQuartz and start an xserver<br/><br/>
 Open a Command Prompt or Terminal and enter
 ```
 docker pull shay4545/mini-search-engine
-```<br/><br/>
+```
 
 ### Run Program:
 In your Command Prompt or Terminal, enter
