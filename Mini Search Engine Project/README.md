@@ -33,12 +33,13 @@ docker run -e DISPLAY=<YOUR_IP>:0.0 shay4545/mini-search-engine
 where <YOUR_IP> is the local IP address of your computer. 
 
 
+
 In Windows, this can be found by entering
 ```
 ipconfig
 ```
 
-in the Command Prompt!
+in the Command Prompt
 
 ![ipconfig](https://user-images.githubusercontent.com/71043322/139515114-f02a3718-a06a-405d-816e-9f3f3d7b4c1c.PNG)
 
