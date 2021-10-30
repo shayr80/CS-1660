@@ -36,6 +36,6 @@ In Windows, this can be found by entering the following in the Command Prompt:
 ```
 ipconfig
 ```
-<br/>
+
 ![ipconfig](https://user-images.githubusercontent.com/71043322/139515114-f02a3718-a06a-405d-816e-9f3f3d7b4c1c.PNG)
 
