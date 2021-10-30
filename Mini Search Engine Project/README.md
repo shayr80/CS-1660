@@ -30,9 +30,7 @@ In your Command Prompt or Terminal, enter
 docker run -e DISPLAY=<YOUR_IP>:0.0 shay4545/mini-search-engine
 ```
 
-where <YOUR_IP> is the local IP address of your computer. 
-
-
+where <YOUR_IP> is the local IP address of your computer.<br/> 
 
 In Windows, this can be found by entering
 ```
