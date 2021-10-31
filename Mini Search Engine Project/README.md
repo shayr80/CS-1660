@@ -1,6 +1,23 @@
 # Mini Search Engine Project
 This project was developed for CS 1660 - Intro to Cloud Computing (Fall 2021) at the University of Pittsburgh
 
+## **Plan to Connect to GCP**
+
+### Authentication
+I will follow the instructions for [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started#cloud-console)<br/><br/>
+
+After getting the .json file with credentials, I will add an instruction to my Dockerfile to set the .json file as an environment variable called GOOGLE_APPLICATION_CREDENTIALS and rebuild my docker image<br/><br/>
+
+### Contacting GCP from Client Application
+- I will create a dataproc cluster in GCP
+- I will import the Google Cloud Client Libraries necessary for submitting hadoop jobs to the cluster into my client application
+- I will write code to calculate inverted indices, search for terms, and calculate top-n frequent terms from inputted files
+- I will add code to my client application to check if data files are in staging bucket, and add them if they don't already exist
+- I will add code to my client application to submit hadoop job(s) to GCP when applicable inputs are given and buttons are pressed
+- I will add code to my client application to parse the output of these hadoop jobs to display readable results to the user
+
+# Running the Client Side Application
+
 ## **Prerequisites**
 
 ### Install Docker:
@@ -11,7 +28,7 @@ Windows: I used [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsr
 
 MacOS: Install [XQuartz](https://www.xquartz.org/)<br/><br/>
 
-## **Running the program**
+## **Running the Application**
 
 ### Launch your X Server
 Windows: Open XLaunch and start an xserver (default settings should be fine)
@@ -24,7 +41,7 @@ Open a Command Prompt or Terminal and enter
 docker pull shay4545/mini-search-engine
 ```
 
-### Run Program:
+### Run:
 In your Command Prompt or Terminal, enter
 ```
 docker run -e DISPLAY=<YOUR_IP>:0.0 shay4545/mini-search-engine
