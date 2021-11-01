@@ -20,6 +20,12 @@ After getting the .json file with credentials, I will add an instruction to my D
 
 ## **Prerequisites**
 
+### Assumptions:
+- The user is using a Windows machine, or will follow the provided instructions if running a MacOS machine.
+- The user has obtained the files provided in this repository and will adjust the Dockerfile accordingly if they are planning to build the docker image themselves instead of pulling my docker image
+- The instructions regarding installation and setup of Docker/X11 are followed, or the user has already installed and configured Docker/X11 correctly. Mac users may need to make adjustments to the instructions regarding setup of X11, as I was not able to verify the setup instructions provided below
+- The user knows or can locate their IP address
+
 ### Install Docker:
 Windows & MacOS: [Docker](https://www.docker.com/products/docker-desktop)<br/><br/>
 
@@ -30,7 +36,7 @@ MacOS: Install [XQuartz](https://www.xquartz.org/)<br/><br/>
 
 ## **Running the Application**
 
-### Launch your X Server
+### Configure your X Server
 Windows: Open XLaunch and start an xserver (default settings should be fine)
 
 MacOS: (These instructions may not be entirely accurate, as I have a Windows machine and was unable to test these commands). See [X11 in docker on macOS](https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285#gistcomment-3477013)<br/><br/>
@@ -42,9 +48,9 @@ docker pull shay4545/mini-search-engine
 ```
 
 ### Run:
-In your Command Prompt or Terminal, enter
+Windows: In your Command Prompt or Terminal, enter
 ```
-docker run -e DISPLAY=<YOUR_IP>:0.0 shay4545/mini-search-engine
+docker run -e DISPLAY=<YOUR_IP>:0 shay4545/mini-search-engine
 ```
 
 where <YOUR_IP> is the local IP address of your computer.<br/><br/>
