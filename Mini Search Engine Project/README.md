@@ -24,7 +24,7 @@ After getting the .json file with credentials, I will add an instruction to my D
 - The user is using a Windows machine, or will follow the provided instructions if running a MacOS machine.
 - The user has obtained the files provided in this repository and will adjust the Dockerfile accordingly if they are planning to build the docker image themselves instead of pulling my docker image
 - The instructions regarding installation and setup of Docker/X11 are followed, or the user has already installed and configured Docker/X11 correctly. Mac users may need to make adjustments to the instructions regarding setup of X11, as I was not able to verify the setup instructions provided below
-- The user knows or can locate their IP address
+- The user knows or can locate their IP address (for Windows users, instructions are provided below)
 
 ### Install Docker:
 Windows & MacOS: [Docker](https://www.docker.com/products/docker-desktop)<br/><br/>
@@ -48,7 +48,7 @@ docker pull shay4545/mini-search-engine
 ```
 
 ### Run:
-Windows: In your Command Prompt or Terminal, enter
+Windows: In your Command Prompt, enter
 ```
 docker run -e DISPLAY=<YOUR_IP>:0 shay4545/mini-search-engine
 ```
@@ -62,3 +62,7 @@ ipconfig
 
 ![ipconfig](https://user-images.githubusercontent.com/71043322/139515114-f02a3718-a06a-405d-816e-9f3f3d7b4c1c.PNG)
 
+MacOS: After following the instructions at the link above to configure X11 for MacOS, enter this command in your Terminal
+```
+docker run -e DISPLAY=host.docker.internal:0 shay4545/mini-search-engine
+```
