@@ -33,7 +33,7 @@ MacOS: Install [XQuartz](https://www.xquartz.org/)<br/><br/>
 ### Launch your X Server
 Windows: Open XLaunch and start an xserver (default settings should be fine)
 
-MacOS: Open XQuartz and start an xserver<br/><br/>
+MacOS: Open XQuartz and start an xserver. Additional steps may be necessary to configure the application for Mac users. See [here](https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285)<br/><br/>
 
 ### Pull Docker Image:
 Open a Command Prompt or Terminal and enter
