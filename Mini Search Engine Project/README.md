@@ -1,21 +1,6 @@
 # Mini Search Engine Project
 This project was developed for CS 1660 - Intro to Cloud Computing (Fall 2021) at the University of Pittsburgh
 
-## **Plan to Connect to GCP**
-
-### Authentication
-I will follow the instructions for [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started#cloud-console)<br/><br/>
-
-After getting the .json file with credentials, I will add an instruction to my Dockerfile to set the .json file as an environment variable called GOOGLE_APPLICATION_CREDENTIALS and rebuild my docker image<br/><br/>
-
-### Contacting GCP from Client Application
-- I will create a dataproc cluster in GCP
-- I will import the Google Cloud Client Libraries necessary for submitting hadoop jobs to the cluster into my client application
-- I will write code to calculate inverted indices, search for terms, and calculate top-n frequent terms from inputted files
-- I will add code to my client application to check if data files are in staging bucket, and add them if they don't already exist
-- I will add code to my client application to submit hadoop job(s) to GCP when applicable inputs are given and buttons are pressed
-- I will add code to my client application to parse the output of these hadoop jobs to display readable results to the user
-
 # Running the Client Side Application
 
 ## **Prerequisites**
@@ -62,7 +47,7 @@ ipconfig
 
 ![ipconfig](https://user-images.githubusercontent.com/71043322/139515114-f02a3718-a06a-405d-816e-9f3f3d7b4c1c.PNG)
 
-MacOS: After following the instructions at the link above to configure X11 for MacOS, enter this command in your Terminal
+MacOS: After following the instructions under "Configure your X Server" to configure X11 for MacOS, enter this command in your Terminal
 ```
 docker run -e DISPLAY=host.docker.internal:0 shay4545/mini-search-engine
 ```
