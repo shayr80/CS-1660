@@ -6,9 +6,10 @@ This project was developed for CS 1660 - Intro to Cloud Computing (Fall 2021) at
 ## **Prerequisites**
 
 ### Assumptions:
-- The user is using a Windows machine, or will follow the provided instructions if running a MacOS machine.
-- The user has obtained the files provided in this repository and will adjust the Dockerfile accordingly if they are planning to build the docker image themselves instead of pulling my docker image
+- The user is using a Windows machine, or will follow the provided instructions if running a MacOS/Linux machine.
+- The user has downloaded the files provided in this repository
 - The instructions regarding installation and setup of Docker/X11 are followed, or the user has already installed and configured Docker/X11 correctly. Mac users may need to make adjustments to the instructions regarding setup of X11, as I was not able to verify the setup instructions provided below
+- The user is familiar enough with GCP to use a Dataproc cluster, or will follow the instructions provided in the demo video to setup a GCP Dataproc cluster
 - The user knows or can locate their IP address (for Windows users, instructions are provided below)
 
 ### Install Docker:
@@ -20,22 +21,27 @@ Windows: I used [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsr
 MacOS: Install [XQuartz](https://www.xquartz.org/)<br/><br/>
 
 ## **Running the Application**
+Instructions for how to run this application on your computer and what the application does are provided in the demo video. This does not include the necessary setup of Docker and X11, but instructions for how to do that are provided in this README file
+
+### Set up your Dataproc Cluster in GCP
+Instructions for how to do this are provided in the demo video in this repository
 
 ### Configure your X Server
 Windows: Open XLaunch and start an xserver (default settings should be fine)
 
 MacOS: (These instructions may not be entirely accurate, as I have a Windows machine and was unable to test these commands). See [X11 in docker on macOS](https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285#gistcomment-3477013)<br/><br/>
 
-### Pull Docker Image:
-Open a Command Prompt or Terminal and enter
+### Build Docker Image:
+Open a Command Prompt or Terminal, navigate to the folder where you downloaded the contents of this repository, and enter
 ```
-docker pull shay4545/mini-search-engine
+docker build mini-search-engine .
 ```
+Note: If you have already built a docker image using the name "mini-search-engine" you might want to change the name to avoid overwriting your existing docker image
 
 ### Run:
 Windows: In your Command Prompt, enter
 ```
-docker run -e DISPLAY=<YOUR_IP>:0 shay4545/mini-search-engine
+docker run -e DISPLAY=<YOUR_IP>:0 mini-search-engine
 ```
 
 where <YOUR_IP> is the local IP address of your computer.<br/><br/>
