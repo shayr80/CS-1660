@@ -4,15 +4,13 @@ This project was developed for CS 1660 - Intro to Cloud Computing (Fall 2021) at
 # Running the Client Side Application
 
 ## **Prerequisites**
-Becuase this application relies on a Dataproc cluster in my GCP account to perform Hadoop MapReduce jobs, anyone who wishes to run this application on their own computer must create their own Dataproc cluster in GCP and edit the GCP variables in the source code to reflect the names of their project, cluster, and storage bucket names. Instructions on how to do this are provided in detail in the demo video of this repository, and higher-level instructions for those familiar with GCP are provided below. 
+Becuase this application relies on a Dataproc cluster in my GCP account to perform Hadoop MapReduce jobs, anyone who wishes to run this application on their own computer must configure the application to contact their own Dataproc cluster on GCP. Instructions on how to do this are provided in detail in the demo video of this repository, and higher-level instructions for those familiar with GCP are provided below. 
 
 ### Assumptions:
 - The user is using a Windows machine, or will follow the provided instructions if running a MacOS/Linux machine
 - The user has downloaded the files provided in this repository
 - The instructions regarding installation and setup of Docker/X11 are followed, or the user has already installed and configured Docker/X11 correctly. Mac users may need to make adjustments to the instructions regarding setup of X11, as I was not able to verify the setup instructions provided below
-- The user is familiar enough with GCP to use a Dataproc cluster, or will follow the instructions provided in the demo video to setup a GCP Dataproc cluster
-- The user will update the GCP variables in the source code file "SearchEngineGUI.java" after creating their Dataproc cluster on GCP
-- The user knows how to create JAR files with dependencies from the source code, or will follow the instructions provided in the demo video to do so
+- The user is familiar enough with GCP to use a Dataproc cluster, or will follow the instructions provided in the demo video to setup a GCP Dataproc cluster and configure the application to contact their cluster
 - The user knows or can locate their IP address (for Windows users, instructions are provided below)
 
 ### Install Docker:
