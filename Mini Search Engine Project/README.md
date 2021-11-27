@@ -6,7 +6,7 @@ This project was developed for CS 1660 - Intro to Cloud Computing (Fall 2021) at
 ## **Prerequisites**
 
 ### Assumptions:
-- The user is using a Windows machine, or will follow the provided instructions if running a MacOS/Linux machine.
+- The user is using a Windows machine, or will follow the provided instructions if running a MacOS/Linux machine
 - The user has downloaded the files provided in this repository
 - The instructions regarding installation and setup of Docker/X11 are followed, or the user has already installed and configured Docker/X11 correctly. Mac users may need to make adjustments to the instructions regarding setup of X11, as I was not able to verify the setup instructions provided below
 - The user is familiar enough with GCP to use a Dataproc cluster, or will follow the instructions provided in the demo video to setup a GCP Dataproc cluster
@@ -25,21 +25,23 @@ MacOS: Install [XQuartz](https://www.xquartz.org/)<br/><br/>
 ## **Running the Application**
 Full instructions for how to run this application on your computer and what the application does are provided in the demo video. This does not include the necessary setup of Docker and X11, but instructions for how to do that are provided in this README file
 
-### Set up your Dataproc Cluster in GCP and update the source code
-Instructions for how to do this are provided in the demo video in this repository, but I will also give a high-level description here those familiar with GCP.
-- Create a new project in your Google Cloud Console, call it something like "mini-search-engine"
-- Ensure you have enabled billing for your newly created project
-- Create a new Dataproc cluster, the default settings should be fine here
-- Navigate to the storage bucket for your newly created cluster and create a folder named "Data" and a folder named "Jar"
-- (Optional) Upload the files from the data folder of this repository to the data folder of your GCP bucket. This is also done by the application, so you can skip this step if you want to
-- Upload three of the four files in the jar folder of this repository to the Jar folder of your GCP bucket. The ones you want to upload are "InvertedIndex.jar", "SearchIndices.jar", and "TopNTerms.jar"
-- Open your downloaded version of "SearchEngineGUI.java" and replace variables listed under the comment "GCP variables" to reflect your newly created project, cluster, and storage bucket names
-- Rebuild the SearchEngineGUI.jar to reflect the above changes and replace the downloaded .jar file with your newly created .jar file
-
-### Configure your X Server
+### Configure your X Server:
 Windows: Open XLaunch and start an xserver (default settings should be fine)
 
 MacOS: (These instructions may not be entirely accurate, as I have a Windows machine and was unable to test these commands). See [X11 in docker on macOS](https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285#gistcomment-3477013)<br/><br/>
+
+### Connecting the client to GCP:
+Step-by-step instructions for how to do this are provided in the demo video in this repository, but I will also give a high-level description here those familiar with GCP.
+- Create a new project in your Google Cloud Console, call it something like "mini-search-engine"
+- Ensure you have enabled billing for your newly created project
+- Create a new Dataproc cluster, the default settings should be fine
+- Navigate to the storage bucket for your newly created cluster and create a folder named "Data" and a folder named "Jar"
+- (Optional) Upload the files from the data folder of this repository to the data folder of your GCP bucket. This is also done by the application when selecting files, so you can skip this step if you want to
+- Upload three of the four files in the jar folder of this repository to the Jar folder of your GCP bucket. The ones you want to upload are "InvertedIndex.jar", "SearchIndices.jar", and "TopNTerms.jar"
+- Open "SearchEngineGUI.java" and replace the variables listed under the comment "GCP variables" to reflect your newly created project, cluster, and storage bucket names
+- Rebuild the "SearchEngineGUI.jar" file to reflect the above changes and replace the downloaded .jar file with your newly created .jar file.
+- Follow the steps provided under the "Creating a service account" header at [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started#cloud-console) to set up a service account and create a service account key
+- After downloading the .json file from the above step, rename it to "projectJSON" and place it in the folder containing the dockerfile from the downloaded repository. The project should now be ready to run on your computer by following the below instructions
 
 ### Build Docker Image:
 Open a Command Prompt or Terminal, navigate to the folder where you downloaded the contents of this repository, and enter
