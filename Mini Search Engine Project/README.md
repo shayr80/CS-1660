@@ -9,6 +9,7 @@ Becuase this application relies on a Dataproc cluster in my GCP account to perfo
 ### Assumptions:
 - The user is using a Windows machine, or will follow the provided instructions if running a MacOS/Linux machine
 - The user has downloaded the files provided in this repository
+- The user has installed and set up JDK 8
 - The instructions regarding installation and setup of Docker/X11 are followed, or the user has already installed and configured Docker/X11 correctly. Mac users may need to make adjustments to the instructions regarding setup of X11, as I was not able to verify the setup instructions provided below
 - The user is familiar enough with GCP to use a Dataproc cluster, or will follow the instructions provided in the demo video to setup a GCP Dataproc cluster and configure the application to contact their cluster
 - The user knows or can locate their IP address (for Windows users, instructions are provided below)
