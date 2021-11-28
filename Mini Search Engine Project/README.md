@@ -44,11 +44,11 @@ Step-by-step instructions for how to do this are provided in the demo video in t
 - Navigate to the storage bucket for your newly created cluster and create a folder named "Data" and a folder named "Jar"
 - (Optional) Upload the files from the data folder of this repository to the data folder of your GCP bucket. This is also done by the application when selecting files, so you can skip this step if you want to
 - Upload the files in the Jar folder of this repository to the Jar folder of your GCP bucket.
-- Open the folder "Search Engine GUI" from this repository as a Maven project in Eclipse. After that, open the file "SearchEngineGUI.java" and replace the variables listed under the comment "GCP variables" to reflect your newly created project id, cluster name, and storage bucket name
+- Open the folder "SearchEngineGUI" from this repository as a Maven project in Eclipse. After that, open the file "SearchEngineGUI.java" and replace the variables listed under the comment "GCP variables" to reflect your newly created project id, cluster name, storage bucket name, and region
 - Run the "SearchEngineGUI.java" program once as a java application in eclipse and then close it so that eclipse recongnizes the main() method for the next step
-- Export "SearchEngineGUI.java" into a runnable .jar file with dependencies named "SearchEngineGUI" and place the newly created jar file into the Jar folder where you downloaded the repository
+- Export "SearchEngineGUI.java" into a runnable .jar file with packaged dependencies named "SearchEngineGUI" and place the newly created jar file into the Jar folder where you downloaded the repository
 - Follow the steps provided under the "Creating a service account" header at [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started#cloud-console) to set up a service account and create a service account key
-- After downloading the .json file from the above step, rename it to "projectJSON" and place it in the folder containing the contents of this repository. The project should now be ready to run on your computer by following the below instructions
+- After downloading the .json file from the above step, rename it to "projectJSON" and place it in the folder containing the contents of this repository (Mini Search Engine Project). The project should now be ready to run on your computer by following the below instructions
 
 ### Build Docker Image:
 Open a Command Prompt or Terminal, navigate to the place where you downloaded this repository, and enter
