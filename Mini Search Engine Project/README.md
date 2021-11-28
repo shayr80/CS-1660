@@ -16,6 +16,7 @@ Becuase this application relies on a Dataproc cluster in my GCP account to perfo
 
 ### Install Docker:
 Windows & MacOS: [Docker](https://www.docker.com/products/docker-desktop)<br/><br/>
+<br/>You may need to run Docker once before your Command Prompt or Terminal recognizes 'docker' commands 
 
 ### Install X11 Framework:
 Windows: I used [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/), but [Xming](https://sourceforge.net/projects/xming/) should also work
@@ -24,7 +25,8 @@ MacOS: Install [XQuartz](https://www.xquartz.org/)<br/><br/>
 
 ### Install Eclipse IDE:
 Windows & MacOS: [Eclipse IDE](https://www.eclipse.org/downloads/)
-<br/>Be sure to select the version for java projects after downloading the installer
+<br/>Be sure to select the version for java projects/developers after downloading the installer.
+<br/>You may also need to install and configure JDK8 on your computer and in eclipse if you run into any issues when trying to compile or export SearchEngineGUI.java, although this may not be necessary. You should also be able to change the settings of the imported maven project in eclipse to use the version of java you have installed.
 
 ## **Running the Application**
 
@@ -37,14 +39,14 @@ xhost +localhost
 ```
 
 ### Connecting the client to GCP:
-Step-by-step instructions for how to do this are provided in the demo video in this repository, but I will also give a high-level description here for those familiar with GCP.
+Instructions for how to do this are provided in the demo video in this repository, but I will also give a high-level description here for those familiar with GCP.
 - Create a new project in your Google Cloud Console, call it something like "mini-search-engine"
 - Ensure you have enabled billing for your newly created project
-- Create a new Dataproc cluster, the default settings should be fine
+- Create a new Dataproc cluster, name it whatever you want, and the default settings should be fine
 - Navigate to the storage bucket for your newly created cluster and create a folder named "Data" and a folder named "Jar"
 - (Optional) Upload the files from the data folder of this repository to the data folder of your GCP bucket. This is also done by the application when selecting files, so you can skip this step if you want to
 - Upload the files in the Jar folder of this repository to the Jar folder of your GCP bucket.
-- Open the folder "SearchEngineGUI" from this repository as a Maven project in Eclipse. After that, open the file "SearchEngineGUI.java" and replace the variables listed under the comment "GCP variables" to reflect your newly created project id, cluster name, storage bucket name, and region
+- Open the folder "SearchEngineGUI" from this repository as a Maven project in Eclipse. After that, open the file "SearchEngineGUI.java" and initialize the variables listed under the comment "GCP variables" to reflect your newly created project **id**, cluster name, storage bucket name, and region
 - Run the "SearchEngineGUI.java" program once as a java application in eclipse and then close it so that eclipse recongnizes the main() method for the next step
 - Export "SearchEngineGUI.java" into a runnable .jar file with packaged dependencies named "SearchEngineGUI" and place the newly created jar file into the Jar folder where you downloaded the repository
 - Follow the steps provided under the "Creating a service account" header at [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started#cloud-console) to set up a service account and create a service account key
