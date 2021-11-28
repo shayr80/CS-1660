@@ -24,7 +24,7 @@ MacOS: Install [XQuartz](https://www.xquartz.org/)<br/><br/>
 
 ### Install Eclipse IDE:
 Windows & MacOS: [Eclipse IDE](https://www.eclipse.org/downloads/)
-Be sure to select the version for java projects after downloading the installer
+<br/>Be sure to select the version for java projects after downloading the installer
 
 ## **Running the Application**
 
