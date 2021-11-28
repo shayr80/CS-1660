@@ -8,17 +8,11 @@ Becuase this application relies on a Dataproc cluster in my GCP account to perfo
 
 ### Assumptions:
 - The user is using a Windows machine, or will follow the provided instructions if running a MacOS/Linux machine
-- The user has downloaded the files provided in this repository
-- The user has installed and set up JDK 8
-- The instructions regarding installation and setup of Docker/X11 are followed, or the user has already installed and configured Docker/X11 correctly. Mac users may need to make adjustments to the instructions regarding setup of X11, as I was not able to verify the setup instructions provided below
-- The user is familiar enough with GCP to use a Dataproc cluster, or will follow the instructions provided in the demo video to setup a GCP Dataproc cluster and configure the application to contact their cluster
-- The user knows or can locate their IP address (for Windows users, instructions are provided below)
 - The words "this repository" refer to the folder containing this README file (Mini Search Engine Project)
-
-### Install & configure JDK8:
-Windows: Download and install the JDK. Press the Windows button in the lower left corner of your screen and search for "environment variables" and click on "Edit the system environment variables." Then click on environment variables and add the path of your jdk's bin directory to a variable named "Path" under System variables. Be sure to remove any other jdks from the Path variable.
-
-MacOS: Download and install the JDK. Follow the instructions provided at [How to set java home environment variable on macOS](https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/) to set up the java environment variable
+- The user has downloaded the files provided in this repository
+- The instructions regarding installation and setup of Docker/X11/Eclipse are followed, or the user has already installed and configured Docker/X11/Eclipse correctly.
+- The user is familiar enough with GCP to use a Dataproc cluster, or will follow the instructions provided in the demo video to setup a GCP Dataproc cluster and configure the application to contact their cluster
+- For Windows, the user knows their IP or will follow the instructions provided below to retrieve their IP address
 
 ### Install Docker:
 Windows & MacOS: [Docker](https://www.docker.com/products/docker-desktop)<br/><br/>
@@ -28,12 +22,16 @@ Windows: I used [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsr
 
 MacOS: Install [XQuartz](https://www.xquartz.org/)<br/><br/>
 
+### Install Eclipse IDE:
+Windows & MacOS: [Eclipse IDE](https://www.eclipse.org/downloads/)
+Be sure to select the version for java projects after downloading the installer
+
 ## **Running the Application**
 
 ### Configure your X Server:
 Windows: Open XLaunch and start an xserver (default settings should be fine)
 
-MacOS: Open XQuartz, and select Preferences under the XQuartz menu. Go to the security tab and ensure "Allow connections from network clients" is checked. In a terminal on the host, run 
+MacOS: Open XQuartz, and select Preferences under the XQuartz menu. Go to the security tab and ensure "Allow connections from network clients" is checked. Then restart XQuartz. In a terminal on the host, run 
 ```
 xhost +localhost
 ```
@@ -45,11 +43,12 @@ Step-by-step instructions for how to do this are provided in the demo video in t
 - Create a new Dataproc cluster, the default settings should be fine
 - Navigate to the storage bucket for your newly created cluster and create a folder named "Data" and a folder named "Jar"
 - (Optional) Upload the files from the data folder of this repository to the data folder of your GCP bucket. This is also done by the application when selecting files, so you can skip this step if you want to
-- Upload three of the four files in the Jar folder of this repository to the Jar folder of your GCP bucket. The ones you want to upload are "InvertedIndex.jar", "SearchIndices.jar", and "TopNTerms.jar"
-- Open "SearchEngineGUI.java" and replace the variables listed under the comment "GCP variables" to reflect your newly created project, cluster, and storage bucket names
+- Upload the files in the Jar folder of this repository to the Jar folder of your GCP bucket.
+- Open the folder "Search Engine GUI" from this repository as a Maven project in Eclipse. After that, open the file "SearchEngineGUI.java" and replace the variables listed under the comment "GCP variables" to reflect your newly created project id, cluster name, and storage bucket name
+- Run the "SearchEngineGUI.java" program once as a java application in eclipse and then close it so that eclipse recongnizes the main() method for the next step
 - Export "SearchEngineGUI.java" into a runnable .jar file with dependencies named "SearchEngineGUI" and place the newly created jar file into the Jar folder where you downloaded the repository
 - Follow the steps provided under the "Creating a service account" header at [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started#cloud-console) to set up a service account and create a service account key
-- After downloading the .json file from the above step, rename it to "projectJSON" and place it in the folder containing the dockerfile from the downloaded repository. The project should now be ready to run on your computer by following the below instructions
+- After downloading the .json file from the above step, rename it to "projectJSON" and place it in the folder containing the contents of this repository. The project should now be ready to run on your computer by following the below instructions
 
 ### Build Docker Image:
 Open a Command Prompt or Terminal, navigate to the place where you downloaded this repository, and enter
@@ -73,7 +72,7 @@ ipconfig
 
 ![ipconfig](https://user-images.githubusercontent.com/71043322/139515114-f02a3718-a06a-405d-816e-9f3f3d7b4c1c.PNG)
 
-MacOS: After following the instructions under "Configure your X Server" to configure X11 for MacOS, enter this command in your Terminal
+MacOS: In your Terminal, enter
 ```
 docker run -e DISPLAY=host.docker.internal:0 mini-search-engine
 ```
