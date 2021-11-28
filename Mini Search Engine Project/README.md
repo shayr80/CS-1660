@@ -13,6 +13,12 @@ Becuase this application relies on a Dataproc cluster in my GCP account to perfo
 - The instructions regarding installation and setup of Docker/X11 are followed, or the user has already installed and configured Docker/X11 correctly. Mac users may need to make adjustments to the instructions regarding setup of X11, as I was not able to verify the setup instructions provided below
 - The user is familiar enough with GCP to use a Dataproc cluster, or will follow the instructions provided in the demo video to setup a GCP Dataproc cluster and configure the application to contact their cluster
 - The user knows or can locate their IP address (for Windows users, instructions are provided below)
+- The words "this repository" refer to the folder containing this README file (Mini Search Engine Project)
+
+### Install & configure JDK8:
+Windows: Download and install the JDK. Press the Windows button in the lower left corner of your screen and search for "environment variables" and click on "Edit the system environment variables." Then click on environment variables and add the path of your jdk's bin directory to a variable named "Path" under System variables. Be sure to remove any other jdks from the Path variable.
+
+MacOS: Download and install the JDK. Follow the instructions provided at [How to set java home environment variable on macOS](https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/) to set up the java environment variable
 
 ### Install Docker:
 Windows & MacOS: [Docker](https://www.docker.com/products/docker-desktop)<br/><br/>
@@ -27,7 +33,10 @@ MacOS: Install [XQuartz](https://www.xquartz.org/)<br/><br/>
 ### Configure your X Server:
 Windows: Open XLaunch and start an xserver (default settings should be fine)
 
-MacOS: (These instructions may not be entirely accurate, as I have a Windows machine and was unable to test these commands). See [X11 in docker on macOS](https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285#gistcomment-3477013)<br/><br/>
+MacOS: Open XQuartz, and select Preferences under the XQuartz menu. Go to the security tab and ensure "Allow connections from network clients" is checked. In a terminal on the host, run 
+```
+xhost +localhost
+```
 
 ### Connecting the client to GCP:
 Step-by-step instructions for how to do this are provided in the demo video in this repository, but I will also give a high-level description here for those familiar with GCP.
@@ -43,11 +52,11 @@ Step-by-step instructions for how to do this are provided in the demo video in t
 - After downloading the .json file from the above step, rename it to "projectJSON" and place it in the folder containing the dockerfile from the downloaded repository. The project should now be ready to run on your computer by following the below instructions
 
 ### Build Docker Image:
-Open a Command Prompt or Terminal, navigate to the folder where you downloaded the contents of this repository, and enter
+Open a Command Prompt or Terminal, navigate to the place where you downloaded this repository, and enter
 ```
-docker build mini-search-engine .
+docker build -t mini-search-engine .
 ```
-Note: If you have already built a docker image using the name "mini-search-engine" you might want to change the name to avoid overwriting your existing docker image
+Note: If you have already built a docker image using the name "mini-search-engine" you might want to change the name to avoid overwriting your existing docker image. Make sure to use the name of the new docker image you built for the below commands if you decided to use a different name than the one provided
 
 ### Run:
 Windows: In your Command Prompt, enter
@@ -57,7 +66,7 @@ docker run -e DISPLAY=<YOUR_IP>:0 mini-search-engine
 
 where <YOUR_IP> is the local IP address of your computer.<br/><br/>
 
-In Windows, this can be found by entering the following in the Command Prompt:
+This can be found by entering the following in the Command Prompt:
 ```
 ipconfig
 ```
@@ -66,5 +75,5 @@ ipconfig
 
 MacOS: After following the instructions under "Configure your X Server" to configure X11 for MacOS, enter this command in your Terminal
 ```
-docker run -e DISPLAY=host.docker.internal:0 shay4545/mini-search-engine
+docker run -e DISPLAY=host.docker.internal:0 mini-search-engine
 ```
