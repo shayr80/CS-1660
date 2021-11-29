@@ -1,6 +1,6 @@
 # Mini Search Engine Project
 This project was developed for CS 1660 - Intro to Cloud Computing (Fall 2021) at the University of Pittsburgh
-<br/><br/>The video files were too large to upload to GitHub so I uploaded them on YouTube and provided links to them below.
+<br/><br/>The video files were too large to upload to GitHub so I uploaded them on YouTube and provided links to them below. I also included timestamps in the video descriptions to provide easy navigation through the different parts of each video.
 <br/><br/>[Demo](https://www.youtube.com/watch?v=eoSqYmUHYbE)
 <br/>[Code Walkthrough](https://www.youtube.com/watch?v=aTAUquOjX2k)
 
