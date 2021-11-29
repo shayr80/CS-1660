@@ -18,7 +18,7 @@ Becuase this application relies on a Dataproc cluster in my GCP account to perfo
 - For Windows, the user knows their IP or will follow the instructions provided below to retrieve their IP address
 
 ### Install Docker:
-Windows & MacOS: [Docker](https://www.docker.com/products/docker-desktop)<br/><br/>
+Windows & MacOS: [Docker](https://www.docker.com/products/docker-desktop)<br/>
 <br/>You may need to run Docker once before your Command Prompt or Terminal recognizes 'docker' commands 
 
 ### Install X11 Framework:
