@@ -1,10 +1,13 @@
 # Mini Search Engine Project
 This project was developed for CS 1660 - Intro to Cloud Computing (Fall 2021) at the University of Pittsburgh
+The video files were too large to upload to GitHub so I uploaded them on YouTube and provided links to them below.
+[Demo video](https://www.youtube.com/watch?v=eoSqYmUHYbE)
+[Code Walkthrough](https://www.youtube.com/watch?v=aTAUquOjX2k)
 
 # Running the Client Side Application
 
 ## **Prerequisites**
-Becuase this application relies on a Dataproc cluster in my GCP account to perform Hadoop MapReduce jobs, anyone who wishes to run this application on their own computer must configure the application to contact their own Dataproc cluster on GCP. Instructions on how to do this are provided in detail in the demo video of this repository, and higher-level instructions for those familiar with GCP are provided below. 
+Becuase this application relies on a Dataproc cluster in my GCP account to perform Hadoop MapReduce jobs, anyone who wishes to run this application on their own computer must configure the application to contact their own Dataproc cluster on GCP. Instructions on how to do this are provided in detail in the demo video linked above, and higher-level instructions for those familiar with GCP are provided below. 
 
 ### Assumptions:
 - The user is using a Windows machine, or will follow the provided instructions if running a MacOS/Linux machine
@@ -39,7 +42,7 @@ xhost +localhost
 ```
 
 ### Connecting the client to GCP:
-Instructions for how to do this are provided in the demo video in this repository, but I will also give a high-level description here for those familiar with GCP.
+Instructions for how to do this are provided in the demo video linked above, but I will also give a high-level description here for those familiar with GCP.
 - Create a new project in your Google Cloud Console, call it something like "mini-search-engine"
 - Ensure you have enabled billing for your newly created project
 - Create a new Dataproc cluster, name it whatever you want, and the default settings should be fine
