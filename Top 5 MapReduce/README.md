@@ -7,5 +7,5 @@ I opted to run my algorithm on a Dataproc cluster on GCP since I was familiar wi
 - ExecutionOnCluster2.PNG : Image of the top-5 terms job executing on the dataproc cluster. A second image was needed to capture the rest of the job output.
 - GCP Account.PNG : Image of my cloud account (including name)
 - Top5Terms.java : MapReduce code I ran to get the top 5 most frequent terms from the data files provided.
-- WordCount.java : MapReduce code I ran to get the count of each word from the data files provided. The output of this job was used as the input for the top-5 terms job.
+- WordCount.java : MapReduce code I ran to get the count of each word from the data files provided. The output of this job was used as the input for the top-5 terms job. This code is also where common words were filtered out (excluded) from the results so that the top-5 terms would be meaningful.
 - top5Terms : File containing the output of the top-5 terms job executed on the Dataproc cluster. The output is in the format: frequency  term
